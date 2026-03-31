@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "name": "UrbanEase Knowledge Base",
+    "version": "1.0"
+  },
+  "keywords": {
+    "about": ["urbanease", "urban ease", "what is urbanease", "what is urban ease", "about urbanease", "tell me about urbanease", "explain urbanease"],
+    "services": ["services", "service", "what do you offer", "offerings", "what can i get", "available services", "cleaning", "plumbing", "electrician", "painting", "pest control", "carpentry", "gardening", "handyman", "repair"],
+    "pricing": ["price", "pricing", "cost", "how much", "charges", "fee", "fees", "rate", "rates", "affordable", "cheap", "expensive"],
+    "booking": ["book", "booking", "schedule", "appointment", "how to book", "reserve", "order", "place order", "request"],
+    "provider": ["provider", "providers", "professional", "professionals", "worker", "workers", "technician", "expert", "who comes", "who will come", "verified"],
+    "payment": ["payment", "pay", "how to pay", "payment method", "upi", "card", "cash", "wallet", "refund", "cancel", "cancellation", "money back"],
+    "founder": ["founder", "who made", "who created", "who built", "owner", "team", "who started"],
+    "technology": ["technology", "tech", "tech stack", "built with", "developed with", "platform", "app", "website", "how is it made"],
+    "advantages": ["advantage", "advantages", "benefits", "why urbanease", "why choose", "better than", "unique", "special", "best"],
+    "how_it_works": ["how it works", "how does it work", "process", "steps", "procedure", "workflow"]
+  },
+  "qa": [
+    {
+      "id": "about_1",
+      "category": "about",
+      "question": "What is UrbanEase?",
+      "answer": "UrbanEase is an on-demand home services platform that connects homeowners with trusted, verified local service professionals. Whether you need cleaning, plumbing, electrical work, or any home repair, UrbanEase makes it easy to book, track, and pay — all in one place. Our mission is to make quality home services accessible, affordable, and stress-free for everyone."
+    },
+    {
+      "id": "about_2",
+      "category": "about",
+      "question": "What does UrbanEase do?",
+      "answer": "UrbanEase is your one-stop solution for home services. We bring professional, background-verified service providers to your doorstep for tasks like deep cleaning, plumbing repairs, electrical fixes, painting, pest control, and much more — all bookable in just a few taps."
+    },
+    {
+      "id": "how_it_works_1",
+      "category": "how_it_works",
+      "question": "How does UrbanEase work?",
+      "answer": "Using UrbanEase is simple: 1️⃣ Choose a service from our catalog, 2️⃣ Pick your preferred date & time slot, 3️⃣ A verified professional arrives at your home, 4️⃣ Service is completed and you pay online or cash. You can track your professional in real-time and rate them after the job is done."
+    },
+    {
+      "id": "services_1",
+      "category": "services",
+      "question": "What services does UrbanEase offer?",
+      "answer": "UrbanEase offers a wide range of home services including: 🧹 Home & Deep Cleaning, 🔧 Plumbing, ⚡ Electrical Repairs, 🎨 Painting & Wall Texture, 🐜 Pest Control, 🪚 Carpentry & Furniture Repair, 🌿 Gardening & Landscaping, 🛠️ General Handyman Services, ❄️ AC Service & Repair, and 🚿 Bathroom & Kitchen Renovation. New services are added regularly!"
+    },
+    {
+      "id": "pricing_1",
+      "category": "pricing",
+      "question": "How much do services cost on UrbanEase?",
+      "answer": "UrbanEase offers transparent, competitive pricing with no hidden charges. Prices start as low as ₹149 for basic services. Each service page shows the exact price before you book. You'll always see a full cost breakdown before confirming your appointment — what you see is what you pay."
+    },
+    {
+      "id": "booking_1",
+      "category": "booking",
+      "question": "How do I book a service?",
+      "answer": "Booking on UrbanEase takes less than 2 minutes! Simply: 1) Browse or search for the service you need, 2) Select your preferred time slot, 3) Enter your address, 4) Confirm & pay. You'll receive an instant booking confirmation with your professional's details. You can also reschedule up to 2 hours before the appointment for free."
+    },
+    {
+      "id": "provider_1",
+      "category": "provider",
+      "question": "Are the service providers verified?",
+      "answer": "Absolutely! Every service professional on UrbanEase goes through a rigorous 3-step verification: ✅ Government ID verification, ✅ Background & criminal record check, ✅ Skill assessment & training certification. Only the top 15% of applicants are accepted onto our platform. Your safety is our top priority."
+    },
+    {
+      "id": "provider_2",
+      "category": "provider",
+      "question": "Who are the service providers?",
+      "answer": "UrbanEase works with a network of 500+ skilled, local professionals across multiple cities. They are independent workers and small businesses who have been verified, trained, and rated by thousands of customers. Each provider has a public profile with ratings, reviews, and experience details so you can choose with confidence."
+    },
+    {
+      "id": "payment_1",
+      "category": "payment",
+      "question": "What payment methods are accepted?",
+      "answer": "UrbanEase accepts multiple payment options for your convenience: 💳 Credit & Debit Cards, 📱 UPI (Google Pay, PhonePe, Paytm), 🏦 Net Banking, 💼 UrbanEase Wallet, and 💵 Cash on Service. All online payments are secured with 256-bit SSL encryption."
+    },
+    {
+      "id": "refund_1",
+      "category": "payment",
+      "question": "What is the refund or cancellation policy?",
+      "answer": "We offer a hassle-free cancellation & refund policy: ✅ Cancel up to 2 hours before — 100% refund. ⚠️ Cancel within 2 hours — 50% refund. ❌ No-show — no refund. If you're unsatisfied with the service quality, raise a complaint within 24 hours and we'll either re-do the service for free or issue a full refund. Customer satisfaction is guaranteed!"
+    },
+    {
+      "id": "founder_1",
+      "category": "founder",
+      "question": "Who founded UrbanEase?",
+      "answer": "UrbanEase was founded by a passionate team of young entrepreneurs who saw the frustration people face when trying to find reliable home service professionals. The founding team combines expertise in technology, operations, and customer experience to build a platform that truly makes home services stress-free and accessible for everyone."
+    },
+    {
+      "id": "technology_1",
+      "category": "technology",
+      "question": "What technology does UrbanEase use?",
+      "answer": "UrbanEase is built on a modern, scalable tech stack: 🌐 Frontend: React.js for a fast, responsive web experience, 📱 Mobile: React Native for iOS & Android apps, ⚙️ Backend: Node.js & Express for robust API services, 🗄️ Database: MongoDB for flexible data storage, 🤖 AI: Integrated AI for smart service matching and this chatbot!, ☁️ Cloud: AWS for 99.9% uptime reliability, and 🔐 Security: End-to-end encryption for all transactions."
+    },
+    {
+      "id": "advantages_1",
+      "category": "advantages",
+      "question": "Why should I choose UrbanEase?",
+      "answer": "UrbanEase stands out for several reasons: ⭐ Verified Professionals — background-checked experts only, 💰 Transparent Pricing — no hidden charges, ever, ⏱️ On-Time Guarantee — we respect your schedule, 🔄 Free Re-service — if you're not 100% satisfied, 📍 Real-time Tracking — know exactly when your pro arrives, 🌟 5-Star Support — 24/7 customer care, and 🏆 Trusted by 50,000+ happy customers across the city!"
+    },
+    {
+      "id": "advantages_2",
+      "category": "advantages",
+      "question": "What makes UrbanEase better than competitors?",
+      "answer": "Unlike other platforms, UrbanEase offers: a satisfaction guarantee with free re-service, real-time GPS tracking of your professional, zero surge pricing (you always pay the listed price), a dedicated 24/7 support team, and a curated network of top-rated local professionals. We don't just connect you — we stand behind every service delivered."
+    }
+  ]
+}
