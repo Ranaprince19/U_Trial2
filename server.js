@@ -16,58 +16,54 @@ const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
 });
 
-// 🔍 Check if UrbanEase query
-function isUrbanEaseQuery(query) {
+
+// 🧠 SMART MATCHING (NEW LOGIC)
+function findBestMatch(query) {
   query = query.toLowerCase();
 
-  for (let key in kb.keywords) {
-    const keywords = kb.keywords[key];
+  let bestMatch = null;
+  let bestScore = 0;
 
-    for (let word of keywords) {
-      if (query.includes(word)) {
-        return key;
+  for (let item of kb.qa) {
+    const question = item.question.toLowerCase();
+
+    let score = 0;
+
+    const queryWords = query.split(" ");
+    const questionWords = question.split(" ");
+
+    for (let word of queryWords) {
+      if (questionWords.includes(word)) {
+        score++;
       }
     }
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestMatch = item;
+    }
   }
+
+  // ✅ threshold (important)
+  if (bestScore >= 2) {
+    return bestMatch;
+  }
+
   return null;
 }
 
-// 📦 Get answer from KB
-function getAnswer(category) {
-  return kb.qa.find(q => q.category === category);
-}
 
-// 🤖 Smart fallback (NO error message)
-function getSimpleAnswer(query) {
-  query = query.toLowerCase();
-
-  if (query.includes("tesla")) {
-    return "Tesla is an American company that manufactures electric vehicles and clean energy products.";
-  }
-
-  if (query.includes("ai")) {
-    return "Artificial Intelligence is the simulation of human intelligence in machines.";
-  }
-
-  if (query.includes("google")) {
-    return "Google is a multinational technology company specializing in internet services.";
-  }
-
-  return "Here’s a general answer: " + query;
-}
-
-// 🤖 Groq AI (with retry + fallback)
+// 🤖 Groq AI
 async function askGroq(query) {
   try {
-    // ✅ First attempt
     const response = await groq.chat.completions.create({
-      model: "llama3-8b-8192",
+      model: "llama3-70b-8192", // ✅ updated model
       messages: [
         {
           role: "system",
           content: `
 You are a helpful AI assistant.
-Give direct and clear answers.
+Give direct and natural answers.
 Do NOT say "according to".
 `
         },
@@ -81,44 +77,25 @@ Do NOT say "according to".
     return response.choices[0].message.content;
 
   } catch (error) {
-    console.log("First attempt failed, retrying...");
+    console.error("Groq error:", error.message);
 
-    try {
-      // 🔁 Retry once
-      const retry = await groq.chat.completions.create({
-        model: "llama3-8b-8192",
-        messages: [
-          {
-            role: "user",
-            content: query
-          }
-        ],
-      });
-
-      return retry.choices[0].message.content;
-
-    } catch (error2) {
-      console.error("Groq failed again:", error2.message);
-
-      // ✅ Final fallback (NO error shown)
-      return getSimpleAnswer(query);
-    }
+    // fallback simple answer
+    return "I'm having trouble answering that right now, but please try again.";
   }
 }
+
 
 // 🚀 MAIN API
 app.post("/chat", async (req, res) => {
   const { message } = req.body;
 
-  // 1️⃣ Check UrbanEase KB
-  const category = isUrbanEaseQuery(message);
+  // 1️⃣ Smart KB matching
+  const match = findBestMatch(message);
 
-  if (category) {
-    const answer = getAnswer(category);
-
+  if (match) {
     return res.json({
       source: "knowledge_base",
-      answer: answer.answer
+      answer: match.answer
     });
   }
 
@@ -131,10 +108,12 @@ app.post("/chat", async (req, res) => {
   });
 });
 
+
 // ✅ Test route
 app.get("/", (req, res) => {
-  res.send("Server running 🚀");
+  res.send("UrbanEase AI Backend Running 🚀");
 });
+
 
 // ✅ Start server
 const PORT = process.env.PORT || 5000;
